@@ -1,13 +1,13 @@
 <!-- JavaScript - variables et types -->
 <!-- http://localhost:3000/alone/exercise/02.html -->
 
-<!-- 🐶 Créé des variables nom, age, ville, rue avec l'inscruction "var"   -->
+<!-- 🐶 Crée des variables nom, age, ville, rue avec l'inscruction "var"   -->
 <!--   📑 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/var -->
 
 <!-- 🐶 Ensuite initialise les variables avec leurs valeurs respectives : "John Doe", 21, "New York", 17   -->
 <!--   🤖 var a = "b" -->
 
-<!-- 🐶 Ensuite créé une instruction pour logger dans la console  -->
+<!-- 🐶 Ensuite crée une instruction pour loguer dans la console  -->
 <!--   🤖 console.log() -->
 
 <!DOCTYPE html>
@@ -16,6 +16,37 @@
     <h1>voir la console</h1>
     <script>
       //démarre ici
+      var nom; // 🐶 Crée une variable nom
+      var age; // 🐶 Crée une variable age
+      var ville; // 🐶 Crée une variable ville
+      var rue; // 🐶 Crée une variable rue
+      var valide; // 🐶 Crée une variable valide
+      // 🐶 Ensuite initialise les variables avec leurs valeurs respectives
+      // "John Doe", 21, "New York", 17
+      nom = "John Doe"; 
+      age = 21; 
+      ville = "New York"; 
+      rue = 17; 
+      valide = true; 
+     //🐶 Ensuite crée une instruction pour loguer dans la console
+      console.log("Nom: " + nom);
+      console.log("Age: " + age);
+      console.log("Ville: " + ville);
+      console.log("Rue: " + rue);
+      console.log("Valide: " + valide);
+      
+      // 🐶 Tu peux aussi loguer toutes les variables en une seule ligne
+      var label = `Hello Nom: ${nom}, Age: ${age}, Ville: ${ville}, Rue: ${rue}, Valide: ${valide}`;
+      console.log(label);
+
+      var local2 = 'Hello'.concat(nom).concat(age).concat(ville).concat(rue).concat(valide);
+      console.log("concat : ",local2);
+      console.log(typeof nom); // Affiche le type de la variable nom
+      console.log(typeof age); // Affiche le type de la variable age
+      console.log(typeof ville); // Affiche le type de la variable ville
+      console.log(typeof rue); // Affiche le type de la variable rue
+      console.log(typeof valide); // Affiche le type de la variable valide
+      
     </script>
   </body>
 </html>
