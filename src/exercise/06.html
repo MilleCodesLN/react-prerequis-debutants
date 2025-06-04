@@ -1,7 +1,7 @@
 <!-- JavaScript - Object  -->
 <!-- http://localhost:3000/alone/exercise/06.html -->
 
-<!-- 🐶 Créé un object personne initialisé avec les 4 propriétés simples (nom, prenom, age, adresse) et leurs valeurs   -->
+<!-- 🐶 Crée un object personne initialisé avec les 4 propriétés simples (nom, prenom, age, adresse) et leurs valeurs   -->
 <!--   🤖 var personne = {a : "b"} -->
 
 <!-- 🐶 Ajoute ensuite la propriéte langages de type array avec les valeurs   -->
@@ -9,18 +9,18 @@
 
 <!-- 🐶 Logue ensuite l'objet personne dans la console  -->
 
-<!-- 🐶 Ajout de 3 autres propriétés dynamiquement (après l'initialisation) -->
+<!-- 🐶 Ajoute 3 autres propriétés dynamiquement (après l'initialisation) -->
 <!--   🤖 personne.g = "h" -->
 
 <!-- 🚀 Bonus 1 - for -->
-<!-- 🐶 parcours chaque element de l'objet et logue les un par un   -->
+<!-- 🐶 parcours chaque élément de l'objet et logue-les un par un   -->
 <!--   🤖 for(var key in personne){ -->
 
 <!-- 🚀 Bonus 2 - function -->
-<!-- 🐶 Creer une fonction somme et l'ajouter sur la propriété somme de personne   -->
+<!-- 🐶 Crée une fonction somme et ajoute-la sur la propriété somme de personne   -->
 <!--   🤖 var personne.somme = somme -->
 
-<!-- 🐶 Appeler ensuite cette fonction    -->
+<!-- 🐶 Appelle ensuite cette fonction    -->
 <!--   🤖 var resultat = personne.somme(2,4) -->
 
 <!DOCTYPE html>
@@ -29,6 +29,29 @@
     <h1>voir la console</h1>
     <script>
       //démarre ici
+      var personne = {
+        nom: "Dupont",
+        prenom: "Hélène",
+        age: 30,
+        adresse: "123 rue de Paris",
+      };
+      personne.langages = ["JavaScript", "Python", "Ruby"];
+      console.log("Personne : ",personne);
+      personne.email = "test@test.fr";
+      personne.telephone = "0123456789";
+      personne.pays = "France";
+
+      console.log("Boucle : parcours de l'objet personne");
+      
+      for (var key in personne) {
+        console.log(key + ": " + personne[key]);
+      }
+      personne.somme = function (a, b) {
+        return a + b;
+      };
+      var resultat = personne.somme(4, 6);
+
+      console.log("Résultat de la somme: " + resultat);
     </script>
   </body>
 </html>
