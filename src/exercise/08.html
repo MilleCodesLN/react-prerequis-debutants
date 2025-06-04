@@ -11,21 +11,46 @@
     <script>
       // 🐶 Récupère l'élement h1 et change son texte par Hello Worlkd
       //  🤖 document.getElementById("title").innerHTML
+      document.getElementById("title").innerHTML = "Welcome";
 
       // 🐶 Créé ensuite un nouveau element h2 et socke cet élement dans une variable "newH2"
       //  🤖 document.createElement
+        var newH2 = document.createElement("h2");
 
       // 🐶 Ajoute ensuite le text "Introduction"
-
       // 🐶 Ajoute ensuite ce nouvel element dans la div root
       //  🤖 document.getElementById("root")
       //  🤖 .appendChild()
-
+      document.getElementById("root").appendChild(newH2);
+      document.getElementsByTagName("h2")[0].innerHTML = "Introduction";
       // 🐶 Créé ensuite un nouveau element <p> avec le texte "Ceci est un paragraphe" et ajoute le dans la div root
+        document.getElementById("root").appendChild(document.createElement("p"));
+      document.getElementsByTagName("p")[0].innerHTML = "Ceci est un paragraphe";
+      // 🐶 Créé ensuite un nouveau element <ul> et ajoute le dans la div root  
+      var newUl = document.createElement("ul");
+      var array = ["html", "css", "javascript"];
+      document.getElementById("root").appendChild(newUl);
+      // 🐶 Créé ensuite un nouveau element <li> avec le texte "Premier élément" et ajoute le dans la liste
+        for (var i = 0; i < array.length; i++) {
+          var newLi = document.createElement("li");
+          newLi.innerHTML = array[i];
+          document.getElementsByTagName("ul")[0].appendChild(newLi);
+        }
+     
+      // 🐶 Ajoute ensuite une classe "highlight" à l'élément <p>
+      document.getElementsByTagName("p")[0].classList.add("highlight");
 
+    
+             
       // 🐶 Créé ensuite un nouveau element <footer> avec le texte "Site créé par .." et ajoute le dans la div root
-
+var newFooter = document.createElement("footer");
+newFooter.innerHTML = "Site créé par Hélène";
+document.getElementById("root").appendChild(newFooter);
       // 🚀 La suite est dans la section bonus
+
+      var styleAttr= document.createAttribute("style");
+      styleAttr.value = "background-color: powderblue;";
+      document.getElementsByTagName("h1")[0].setAttributeNode(styleAttr);
     </script>
   </body>
 </html>
