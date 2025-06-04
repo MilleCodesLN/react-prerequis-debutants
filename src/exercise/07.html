@@ -15,14 +15,60 @@
       }
       // 🐶 Vérifie si le prénom est bien Jacques sinon logue une erreur
       // 🤖 if (personne.nom == "")
+      if (personne.prenom !== 'Jacques') {
+        console.error('Erreur: le prénom n\'est pas Jacques');
+      } else {
+        console.log('Le prénom est correct');
+      }
+      // 🐶 Vérifie si l'âge est supérieur à 18 ans 
+      // 🤖 if (personne.age > 18)  
+      if (personne.age > 18) {
+        console.log('La personne est majeure');
+      } else {
+        console.log('La personne est mineure');
+      }
+      // 🐶 Vérifie si l'adresse est bien 'rue du temple'
+      // 🤖 if (personne.adresse == "rue du temple")
+
+      if (personne.adresse === 'rue du temple') {
+        console.log('L\'adresse est correcte');
+      } else {
+        console.error('Erreur: l\'adresse n\'est pas correcte');
+      }
+      
+
 
       // 🐶 répète l'opération  pour le nom, age, adresse
 
       // 🐶 Vérifier si la personne possède le langage 'js'
       // 🐶 Pour vérifier si une un élement est dans un tableau tu peux parcourir ce tableau ou utiliser la fonction array.includes
       // 📑 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-
+      if (personne.langages.includes('js')) {
+        console.log('La personne maîtrise le langage JavaScript');
+      } else {
+        console.error('Erreur: la personne ne maîtrise pas le langage JavaScript');
+      }
       // 🚀 La suite est dans la section bonus
+      if(personne.prenom === 'Jacques' && personne.age > 18 && personne.adresse === 'rue du temple' && personne.langages.includes('js')) {
+        console.log('Toutes les conditions sont remplies pour ET');
+      } else {
+        console.error('Une ou plusieurs conditions ne sont pas remplies pour le ET');
+      }
+      if(personne.prenom === 'Jacques' || personne.age > 18 || personne.adresse === 'rue du temple' || personne.langages.includes('js')) {
+        console.log('Au moins une condition est remplie pour le OU');
+      } else {
+        console.error('Aucune condition n\'est remplie pour le OU');
+      }
+
+      //La personne habite-elle "`rue du temple`" OU "`rue de la pompe`" ET est-elle`majeur` ?
+      if ((personne.adresse === 'rue du temple' || personne.adresse === 'rue de la pompe') && personne.age > 18) {
+        console.log('La personne habite soit rue du temple soit rue de la pompe et est majeure');
+      } else {
+        console.error('La condition n\'est pas remplie pour l\'adresse ou l\'âge');
+      }
+      // La personne habite-t-elle "`rue du temple`" ET "`rue de la pompe`" OU est-elle `majeur` ?
+
+
     </script>
   </body>
 </html>
