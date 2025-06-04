@@ -1,7 +1,7 @@
 <!-- JavaScript - Array et Boucles  -->
 <!-- http://localhost:3000/alone/exercise/05.html -->
 
-<!-- 🐶 Créé un array langageList initialisée avec les 3 valeurs "html", "css" , "js"   -->
+<!-- 🐶 Crée un array langageList initialisé avec les 3 valeurs "html", "css" , "js"   -->
 <!--   🤖 var langageList = ["a","b"] -->
 
 <!-- 🐶 Ajoute les 3 valeurs "java" , "python" et "c++" avec push  -->
@@ -22,6 +22,30 @@
     <h1>voir la console</h1>
     <script>
       //démarre ici
+      var langageList = ["html", "css", "js"];
+      // Ajoute les 3 valeurs "java", "python" et "c++" avec push
+      langageList.push("java");
+      langageList.push("python");
+      langageList.push("c++");
+      // Logue ensuite toutes les valeurs du tableau avec une boucle for
+      for (var i = 0; i < langageList.length; i++) {
+        console.log(langageList[i]);
+      }
+      // Remplace la valeur "html" par "html5"
+      var index = langageList.indexOf("html"); //retourne -1 si non trouvé
+      if (index !== -1) {
+        langageList[index] = "html5";
+      }
+      // Supprime le dernier élément du tableau avec splice
+      langageList.splice(langageList.length - 1, 1); // supprime le dernier élément
+      // Note: splice prend deux arguments, le premier est l'index de départ et le second est le nombre d'éléments à supprimer
+      // Si vous voulez supprimer le dernier élément, vous pouvez aussi utiliser pop()
+      // langageList.pop(); // supprime le dernier élément
+      // Note: pop() est plus simple pour supprimer le dernier élément
+      // Note: splice est plus flexible car il permet de supprimer plusieurs éléments à partir d'un index donné
+     
+      // Logue le tableau final
+      console.table(langageList);
     </script>
   </body>
 </html>
