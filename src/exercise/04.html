@@ -1,17 +1,17 @@
 <!-- JavaScript - Fonctions  -->
 <!-- http://localhost:3000/alone/exercise/04.html -->
 
-<!-- 🐶 Créé des fonctions avec "function" et utilise les opérateurs arithmetiques si besoin   -->
+<!-- 🐶 Crée des fonctions avec "function" et utilise les opérateurs arithmetiques si besoin   -->
 <!--   📑 https://www.w3schools.com/js/js_arithmetic.asp -->
 
-<!-- 🐶 Créé les fonctions dans l'ordre suivant somme sayHello multiplication calculAir -->
+<!-- 🐶 Crée les fonctions dans l'ordre suivant somme sayHello multiplication calculAir -->
 
 <!-- 🐶 Appelle les fonctions dans l'ordre suivant somme sayHello multiplication calculAir avec les paramètres de ton choix -->
 
 <!-- 🐶 Affecte le résultat dans une variable res -->
 <!--   🤖 var res = maSuperFonction() -->
 
-<!-- 🐶 Ensuite logge dans la console la variable res après chaque appelle de fonction  -->
+<!-- 🐶 Ensuite logue dans la console la variable res après chaque appel de fonction  -->
 <!--   🤖 console.log() -->
 
 <!DOCTYPE html>
@@ -19,7 +19,36 @@
   <body>
     <h1>voir la console</h1>
     <script>
-      //démarre ici
+      // Crée une fonction qui additionne deux nombres
+      function somme(a, b) {
+        return a + b;
+      }
+      // Crée une fonction qui affiche un message de salutation
+      function sayHello(nom) {
+        return "Bonjour, " + nom + "!";
+      }
+      // Crée une fonction qui multiplie deux nombres
+      function multiplication(x, y) {
+        return x * y;
+      }
+      // Crée une fonction qui calcule l'aire d'un rectangle
+      function calculAir(longueur, largeur) {
+        return multiplication(longueur,largeur);
+      }
+      // Appelle les fonctions avec des paramètres de ton choix
+      var res1 = somme(5, 10);
+      console.log(res1); // Affiche le résultat de la somme
+      var res2 = sayHello("Hélène");
+      console.log(res2); // Affiche le message de salutation
+      var res3 = multiplication(4, 7);
+      console.log(res3); // Affiche le résultat de la multiplication
+      var res4 = calculAir(5, 3);
+      console.log(res4); // Affiche l'aire du rectangle
+      // Affecte le résultat final dans une variable res
+      var res = "Somme: " + res1 + " |  Salutations : " + res2 + " | Multiplication : " + res3 + " | Aire du rectangle : " + res4;
+      // Logue la variable res dans la console
+      console.log(res); // Affiche le résultat final    
+      
     </script>
   </body>
 </html>
