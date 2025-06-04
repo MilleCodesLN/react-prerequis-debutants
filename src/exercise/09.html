@@ -6,22 +6,100 @@
   <body>
     <div id="root">
       <h1 id="title">Pas d'information</h1>
-      <!-- 🐶 Créé un bouton avec attribut onclick qui fait appelle à la fonction handleClick()-->
+      <!-- 🐶 Crée un bouton avec attribut onclick qui fait appel à la fonction handleClick()-->
       <!-- 🤖 <button onclick="handleClick()">Click me</button> -->
+       <button onclick="handleClick()">Click me</button>
     </div>
     <script>
-      // 🐶 Créé une fonction handleClick() et déclare 2 variables date et time
+      // 🐶 Crée une fonction handleClick() et déclare 2 variables date et time
       // 🤖 var date = new Date().toLocaleDateString() et
       // var time = new Date().toLocaleTimeString()
       // 📑 https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
+      function handleClick() {
+        var date = new Date().toLocaleDateString();
+        var time = new Date().toLocaleTimeString();
+      
       //
-      // 🐶 créé ensuite une variable `label` qui sera une concaténation
+      // 🐶 crée ensuite une variable `label` qui sera une concaténation
       // "Nous sommes le : `date` il est `time`"
+      // 🤖 var label = "Nous sommes le : " + date + " il est " + time;
+      var label = "Nous sommes le : " + date + " il est " + time;
       //
-      // 🐶 mets à jour l'élément h1 avec `label`
+      // 🐶 met à jour l'élément h1 avec `label`
       // utilise document.getElementById et innerText
-
+      // 🤖 document.getElementById("title").innerText = label;
+      document.getElementById("title").innerText = label;
+}
       // 🚀 La suite est dans la section bonus
+
+      //Mettre à jour la date et l'heure à chaque évènement suivant :
+
+// au survole de la souris sur le bouton ou sur le titre onmouseover
+// lorsque la souris entre (onmouseenter) dans une div bleue (ci-dessous le code d'une div bleue)
+// <div style="background-color: lightblue">
+//    entre ici
+// </div>
+// lorsque la souris sort (onmouseleave) d'une div rouge (ci-dessous le code d'une div rouge)
+// <div style="background-color: lightcoral">
+//    entre ici
+// </div>
+      document.querySelector("button").onmouseover = handleClick;
+      document.getElementById("title").onmouseover = handleClick;
+
+      var blueDiv = document.createElement("div");
+      blueDiv.style.backgroundColor = "lightblue";
+      blueDiv.innerText = "entre ici";
+      blueDiv.onmouseenter = handleClick;
+      document.body.appendChild(blueDiv);
+
+      var redDiv = document.createElement("div");
+      redDiv.style.backgroundColor = "lightcoral";
+      redDiv.innerText = "entre ici";
+      redDiv.onmouseleave = handleClick;
+      document.body.appendChild(redDiv);
+
+
+
+
+      // Met à jour la date lorsque l'on presse sur certaines touches du clavier.
+
+// enter
+// flèche bas
+// flèche haut
+// Pour cela il va falloir ajouter un évent 'keypress' avec addEventListener
+
+// function handlePress(event) {
+//   var name = event.key
+//   var code = event.code
+//   console.log('name ' + name + ' : code ' + code)
+// }
+// document.addEventListener('keydown', handlePress)
+// // removeEventListener pour supprimer le listner
+// Pour terminer, supprime ce listener lors d'un clic sur un bouton.
+
+// <button onclick="code pour supprimer le listener">
+//   supprime le listener
+// </button>
+      function handlePress(event) {
+        var name = event.key;
+        var code = event.code;
+        console.log('name ' + name + ' : code ' + code);
+        if (name === 'Enter' || name === 'ArrowDown' || name === 'ArrowUp') {
+          handleClick(); // Met à jour la date et l'heure
+        }
+       
+      }
+      document.addEventListener('keydown', handlePress);
+
+      // Bouton pour supprimer le listener
+      function removeListener() {
+        document.removeEventListener('keydown', handlePress);
+        console.log('Listener removed');
+      }
+      var removeButton = document.createElement("button");
+      removeButton.innerText = "Supprime le listener";
+      removeButton.onclick = removeListener;
+      document.body.appendChild(removeButton);  
     </script>
   </body>
 </html>
